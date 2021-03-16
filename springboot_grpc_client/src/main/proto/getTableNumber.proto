@@ -5,15 +5,18 @@ option java_package = "com.watermelon.grpc";
 option java_outer_classname = "GetTableNumberServiceProto";
 option java_multiple_files = true;
 
+//定义接口
 service TableNumberService{
   rpc getTableNumber(GetTableNumberRequest) returns (GetTableNumberResponse){}
 }
 
+//定义请求参数
 message GetTableNumberRequest{
   string commodityId = 1;
   int32 tableCount = 2;
 }
 
+//定义响应参数
 message GetTableNumberResponse{
   int32 tableNumber = 1;
 }
