@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mygrpc;
+option java_package = "a.b.c";
+option java_outer_classname = "AddServiceProto";
+option java_multiple_files = true;
+
+service TableNumberService{
+  rpc getTableNumber(GetTableNumberRequest) returns (GetTableNumberResponse){}
+}
+
+message GetTableNumberRequest{
+  string commodityId = 1;
+  int32 tableCount = 2;
+}
+
+message GetTableNumberResponse{
+  int32 tableNumber = 1;
+}
